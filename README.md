@@ -9,6 +9,7 @@
 ---
 
 ## Cấu trúc thư mục
+```
 23127364_HW01_AI_100/
 │   appendix_A_prompt_log.md
 │   README.md
@@ -79,7 +80,7 @@
 └── requirement/
 ├── 2026.HW01.Jobs.Defects...pdf   ← đề bài HW01
 └── ___2026.Homework.Policies.pdf  ← chính sách nộp bài
-
+```
 ---
 Repo quản lý:
 - **GitHub:** https://github.com/SieuNhanGao889/hcmus_qaqc_assignments
