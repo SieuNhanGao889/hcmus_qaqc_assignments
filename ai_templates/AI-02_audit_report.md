@@ -145,6 +145,8 @@ Search string gợi ý cho LinkedIn:
 ```
 
 ### (3) Verdict:
+ **INCOMPLETE & INVALID**
+
 Chưa hoàn thiện và còn sai sót nhỏ về mặt phân cấp vai trò cấu trúc, vận hành theo slide.
 
 ### (4) Audit Table
@@ -375,6 +377,8 @@ Bên trên là mẫu bạn hãy điền giúp tôi thông tin của trang page �
 ```
 
 ### (3) Verdict
+**INCOMPLETE**
+
 Chưa hoàn thiện còn thiếu ảnh minh chứng và đánh số vị trí chưa chuẩn do các prompt gửi rời rạc.
 
 ### (4) Student Audit
@@ -384,3 +388,715 @@ Chưa hoàn thiện còn thiếu ảnh minh chứng và đánh số vị trí ch
 |2 | Thiếu ảnh minh chứng | Không hoàn chỉnh | Bài tập yêu cầu phải có ảnh minh chứng cho mỗi vị trí để chứng minh đã truy cập vào trang tuyển dụng và phân tích đúng JD. | Thêm ảnh chụp màn hình minh chứng |
 
 
+## Entry 3: 20 Software Defects 2022–2026 (Requirement 2)
+
+**Date of Audit:** 2026-06-04
+
+**Target AI Model:** ChatGPT (GPT-4o)
+
+**Task:** Sinh danh sách 20 software defects 2022–2026 kèm mô tả, root cause, severity,
+hậu quả, giải pháp và nhận định chuyên gia. Output được dùng làm nội dung gốc cho Requirement 2.
+
+---
+
+### (1) Prompt + Tool
+
+**Tool used:** ChatGPT (GPT-4o)
+
+**Timestamp:** 10:45 03/06/2026
+
+**Prompt:**
+Tôi đang cần nghiên cứu về mấy sự cố công nghệ. Bạn hãy đóng vai một chuyên gia tổng hợp thông tin
+và liệt kê cho tôi danh sách đúng 20 sự cố lỗi phần mềm software defects nổi tiếng đã được công khai
+trên thế giới hoặc tại Việt Nam trong giai đoạn từ năm 2022 đến năm 2026 nhé.
+
+Yêu cầu cấu trúc danh sách bắt buộc phải có:
+- Ít nhất 5 sự cố liên quan trực tiếp đến AI/LLM (như AI hallucination, prompt injection, bias, lỗi chatbot)
+- Thời gian: Từ năm 2022 đến năm 2026.
+
+Với mỗi sự cố trong số 20 sự cố, hãy trình bày rõ ràng 4 mục sau bằng tiếng Việt:
+1. Tên sự cố & Năm xảy ra
+2. Mô tả chi tiết lỗi kèm theo nguyên nhân cốt lõi về mặt kỹ thuật root cause
+3. Mức độ nghiêm trọng và hậu quả thực tế ra sao
+4. Giải pháp khắc phục của tổ chức hay công ty đó
+
+Sau khi viết xong 4 mục trên cho mỗi sự cố, hãy viết thêm 1 dòng nhận định chuyên gia.
+
+---
+
+### (2) AI Output
+
+```
+1. CrowdStrike Falcon Update Crash (2024)
+1. Tên sự cố & Năm xảy ra
+
+CrowdStrike Falcon Sensor Defective Update – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Một bản cập nhật nội dung (content update) của Falcon Sensor khiến hàng triệu máy Windows bị BSOD (Blue Screen of Death) và reboot liên tục.
+
+Nguyên nhân gốc được CrowdStrike công bố là lỗi trong hệ thống kiểm tra (Content Validator), cho phép một cấu hình lỗi vượt qua quá trình xác thực và được phát hành toàn cầu. Một thành phần của driver đọc dữ liệu không hợp lệ dẫn đến truy cập bộ nhớ ngoài phạm vi.
+
+3. Mức độ nghiêm trọng & Hậu quả
+Khoảng 8,5 triệu thiết bị bị ảnh hưởng.
+Hàng không, ngân hàng, bệnh viện, truyền thông bị gián đoạn trên phạm vi toàn cầu.
+Được xem là một trong những sự cố CNTT lớn nhất lịch sử.
+4. Giải pháp khắc phục
+Thu hồi bản cập nhật lỗi.
+Tăng cường kiểm thử nhiều lớp.
+Bổ sung quy trình triển khai theo từng giai đoạn (staged rollout).
+Cải tiến hệ thống validation.
+
+Nhận định chuyên gia: Đây không phải lỗi của một lập trình viên mà là thất bại của toàn bộ quy trình QA và quản trị phát hành phần mềm.
+
+2. ChatGPT Hallucinated Legal Citations (2023–2026)
+1. Tên sự cố & Năm xảy ra
+
+ChatGPT Fake Court Citations – 2023–2026
+
+2. Mô tả lỗi & Root Cause
+
+ChatGPT tạo ra các án lệ, tài liệu pháp lý không tồn tại nhưng trình bày như thật.
+
+Nguyên nhân gốc là cơ chế dự đoán token của LLM tối ưu xác suất ngôn ngữ thay vì kiểm chứng sự thật.
+
+3. Mức độ nghiêm trọng & Hậu quả
+Luật sư bị tòa án xử phạt.
+Hồ sơ pháp lý chứa thông tin giả.
+Gây mất niềm tin vào AI trong ngành luật.
+4. Giải pháp khắc phục
+RAG (Retrieval Augmented Generation).
+Citation verification.
+Human review bắt buộc.
+
+Nhận định chuyên gia: Hallucination không phải bug tạm thời mà là hệ quả cấu trúc của kiến trúc LLM hiện nay.
+
+3. Google Gemini Image Bias Incident (2024)
+1. Tên sự cố & Năm xảy ra
+
+Gemini Historical Image Generation Bias – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Gemini sinh ảnh lịch sử sai lệch nhân khẩu học khi tạo hình nhân vật lịch sử.
+
+Root cause:
+
+Bộ lọc fairness can thiệp quá mạnh.
+Prompt rewriting tự động làm sai bối cảnh lịch sử.
+3. Hậu quả
+Chỉ trích toàn cầu.
+Google phải tạm dừng tính năng tạo ảnh người.
+4. Khắc phục
+Điều chỉnh policy model.
+Tăng ràng buộc lịch sử trong pipeline.
+
+Nhận định chuyên gia: Đây là ví dụ điển hình của việc tối ưu mục tiêu đạo đức nhưng làm hỏng tính chính xác dữ liệu.
+
+4. Air Canada Chatbot False Refund Policy (2024)
+1. Tên sự cố & Năm xảy ra
+
+Air Canada AI Chatbot Refund Error – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Chatbot AI tự tạo chính sách hoàn tiền không tồn tại.
+
+Root cause:
+
+LLM sinh nội dung ngoài knowledge base.
+Không có cơ chế ràng buộc câu trả lời theo chính sách chính thức.
+3. Hậu quả
+Air Canada thua kiện.
+Phải bồi hoàn cho khách hàng.
+4. Khắc phục
+Giới hạn chatbot chỉ truy xuất dữ liệu được xác thực.
+Human-approved policy database.
+
+Nhận định chuyên gia: Sai lầm nằm ở kiến trúc sản phẩm chứ không phải riêng mô hình AI.
+
+5. Microsoft Copilot Prompt Injection (2024)
+1. Tên sự cố & Năm xảy ra
+
+Copilot Prompt Injection Vulnerability – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Kẻ tấn công nhúng chỉ dẫn độc hại trong email hoặc tài liệu khiến Copilot tiết lộ dữ liệu.
+
+Root cause:
+
+Không tách biệt dữ liệu và lệnh.
+Mô hình không phân biệt trusted instruction và untrusted content.
+3. Hậu quả
+Nguy cơ rò rỉ dữ liệu doanh nghiệp.
+Tác động đến nhiều sản phẩm AI enterprise.
+4. Khắc phục
+Prompt isolation.
+Content sanitization.
+Trust boundary enforcement.
+
+Nhận định chuyên gia: Prompt injection hiện là SQL Injection của thời đại AI.
+
+6. Google Bard Hallucination Demo (2023)
+1. Tên sự cố & Năm xảy ra
+
+Google Bard Telescope Fact Error – 2023
+
+2. Mô tả lỗi & Root Cause
+
+Bard đưa thông tin thiên văn sai trong video quảng cáo.
+
+Root cause:
+
+Hallucination từ mô hình ngôn ngữ.
+Thiếu fact-check trước khi công bố.
+3. Hậu quả
+Giá cổ phiếu Alphabet giảm mạnh.
+Mất uy tín sản phẩm.
+4. Khắc phục
+Tăng fact verification.
+Human review cho nội dung marketing.
+
+Nhận định chuyên gia: AI không nên được xem là nguồn sự thật cuối cùng.
+
+7. MyCity New York AI Business Chatbot Error (2024)
+1. Tên sự cố & Năm xảy ra
+
+NYC Business Chatbot Misleading Advice – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Chatbot đưa lời khuyên trái luật lao động và thuế.
+
+Root cause:
+
+RAG không đầy đủ.
+Thiếu cơ chế kiểm tra quy định pháp lý.
+3. Hậu quả
+Thành phố bị chỉ trích.
+Rủi ro pháp lý.
+4. Khắc phục
+Thêm validation dựa trên luật.
+Human moderation.
+
+Nhận định chuyên gia: AI không phù hợp làm nguồn tư vấn pháp lý tự động hoàn toàn.
+
+8. Azure East US Authentication Failure (2024)
+1. Tên sự cố & Năm xảy ra
+
+Microsoft Azure Authentication Outage – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Lỗi cấu hình dịch vụ xác thực làm nhiều dịch vụ Azure ngừng hoạt động.
+
+Root cause:
+
+Lỗi triển khai cấu hình hệ thống.
+3. Hậu quả
+Nhiều dịch vụ cloud bị gián đoạn.
+4. Khắc phục
+Rollback cấu hình.
+Tăng canary deployment.
+
+Nhận định chuyên gia: Hệ thống càng tập trung thì lỗi cấu hình càng trở thành điểm thất bại toàn cục.
+
+9. GitLab Backup Deletion Regression (2022)
+1. Tên sự cố & Năm xảy ra
+
+GitLab Backup Automation Bug – 2022
+
+2. Mô tả lỗi & Root Cause
+
+Một lỗi regression trong quy trình backup dẫn đến mất khả năng khôi phục ở một số môi trường.
+
+3. Hậu quả
+Rủi ro mất dữ liệu.
+4. Khắc phục
+Kiểm thử khôi phục định kỳ.
+Backup verification.
+
+Nhận định chuyên gia: Backup chưa được test restore thì chưa phải backup.
+
+10. AWS Lambda Internal Service Regression (2022)
+1. Tên sự cố & Năm xảy ra
+
+AWS Lambda Service Regression – 2022
+
+2. Mô tả lỗi & Root Cause
+
+Một thay đổi phần mềm nội bộ gây lỗi xử lý yêu cầu.
+
+3. Hậu quả
+Nhiều dịch vụ serverless bị ảnh hưởng.
+4. Khắc phục
+Rollback nhanh.
+Canary release.
+
+Nhận định chuyên gia: Tự động hóa triển khai phải đi kèm tự động hóa rollback.
+
+11. Meta Ads Delivery Bug (2022)
+1. Tên sự cố & Năm xảy ra
+
+Facebook Ads Delivery Defect – 2022
+
+2. Mô tả lỗi & Root Cause
+
+Lỗi thuật toán phân phối quảng cáo khiến hiệu suất giảm bất thường.
+
+3. Hậu quả
+Nhà quảng cáo thiệt hại doanh thu.
+4. Khắc phục
+Điều chỉnh mô hình ranking.
+
+Nhận định chuyên gia: Thuật toán recommendation sai đôi khi gây thiệt hại lớn hơn lỗi giao diện.
+
+12. Twitter/X Timeline Recommendation Bug (2023)
+1. Tên sự cố & Năm xảy ra
+
+For You Feed Algorithm Error – 2023
+
+2. Mô tả lỗi & Root Cause
+
+Thuật toán ưu tiên bất thường một số nội dung.
+
+3. Hậu quả
+Trải nghiệm người dùng bị méo mó.
+4. Khắc phục
+Điều chỉnh trọng số ranking.
+
+Nhận định chuyên gia: Thuật toán đề xuất chính là phần mềm có ảnh hưởng xã hội lớn nhất hiện nay.
+
+13. Google Maps Routing Error (2023)
+1. Tên sự cố & Năm xảy ra
+
+Maps Incorrect Routing Incident – 2023
+
+2. Mô tả lỗi & Root Cause
+
+Thuật toán định tuyến sử dụng dữ liệu giao thông lỗi thời.
+
+3. Hậu quả
+Gây ùn tắc cục bộ.
+4. Khắc phục
+Cập nhật dữ liệu thời gian thực.
+
+Nhận định chuyên gia: Dữ liệu sai khiến thuật toán đúng vẫn cho kết quả sai.
+
+14. Toyota Connected Service Outage (2023)
+1. Tên sự cố & Năm xảy ra
+
+Toyota Cloud Configuration Error – 2023
+
+2. Mô tả lỗi & Root Cause
+
+Lỗi cấu hình cloud làm dữ liệu khách hàng bị công khai.
+
+3. Hậu quả
+Rò rỉ dữ liệu.
+4. Khắc phục
+Kiểm tra cấu hình tự động.
+
+Nhận định chuyên gia: Phần lớn sự cố cloud hiện nay xuất phát từ cấu hình chứ không phải hacker.
+
+15. Samsung Keyboard Predictive Text Bug (2024)
+1. Tên sự cố & Năm xảy ra
+
+Samsung AI Keyboard Suggestion Error – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Mô hình gợi ý văn bản tạo nội dung không phù hợp.
+
+3. Hậu quả
+Ảnh hưởng trải nghiệm người dùng.
+4. Khắc phục
+Fine-tune và lọc đầu ra.
+
+Nhận định chuyên gia: Chất lượng dữ liệu huấn luyện quyết định chất lượng AI.
+
+16. OpenAI GPT Store Prompt Leakage (2024)
+1. Tên sự cố & Năm xảy ra
+
+Custom GPT Prompt Leakage – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Người dùng khai thác prompt để lộ system prompt của GPT tùy chỉnh.
+
+3. Hậu quả
+Rò rỉ logic nội bộ.
+4. Khắc phục
+Tăng cường prompt protection.
+
+Nhận định chuyên gia: Không nên xem prompt là cơ chế bảo mật.
+
+17. McDonald’s AI Drive-Thru Ordering Errors (2024)
+1. Tên sự cố & Năm xảy ra
+
+Drive-Thru Ordering AI Mistakes – 2024
+
+2. Mô tả lỗi & Root Cause
+
+AI nhận dạng giọng nói đặt sai món ăn.
+
+3. Hậu quả
+Khách hàng nhận đơn sai.
+McDonald's dừng triển khai tại nhiều điểm.
+4. Khắc phục
+Tăng human review.
+Huấn luyện dữ liệu giọng nói tốt hơn.
+
+Nhận định chuyên gia: AI giao tiếp với thế giới vật lý cần độ chính xác cao hơn chatbot thông thường.
+
+18. Synapse Xray Medical AI Bias Issue (2025)
+1. Tên sự cố & Năm xảy ra
+
+Medical Imaging AI Bias Detection – 2025
+
+2. Mô tả lỗi & Root Cause
+
+Mô hình chẩn đoán bị lệch trên một số nhóm bệnh nhân.
+
+3. Hậu quả
+Nguy cơ chẩn đoán sai.
+4. Khắc phục
+Mở rộng dữ liệu huấn luyện.
+
+Nhận định chuyên gia: Bias trong AI y tế là vấn đề an toàn chứ không chỉ là đạo đức.
+
+19. VNDirect Trading Platform Outage Recovery Defects (2024)
+1. Tên sự cố & Năm xảy ra
+
+VNDirect System Recovery Issues – 2024
+
+2. Mô tả lỗi & Root Cause
+
+Sau sự cố an ninh mạng, nhiều thành phần phần mềm và quy trình phục hồi hoạt động không ổn định.
+
+3. Hậu quả
+Giao dịch bị gián đoạn.
+Ảnh hưởng nhà đầu tư Việt Nam.
+4. Khắc phục
+Tái cấu trúc hạ tầng.
+Tăng DR (Disaster Recovery).
+
+Nhận định chuyên gia: Năng lực phục hồi sau sự cố quan trọng không kém khả năng phòng thủ.
+
+20. Cloudflare Service Configuration Bug (2025)
+1. Tên sự cố & Năm xảy ra
+
+Cloudflare Internal Software Fault – 2025
+
+2. Mô tả lỗi & Root Cause
+
+Lỗi phần mềm nội bộ gây gián đoạn một số dịch vụ mạng toàn cầu.
+
+3. Hậu quả
+Nhiều website bị ảnh hưởng.
+4. Khắc phục
+Tăng kiểm thử triển khai.
+Cải tiến observability.
+
+Nhận định chuyên gia: Các nền tảng hạ tầng Internet hiện đã trở thành "single point of failure" cho hàng triệu hệ thống khác.
+```
+
+Tóm tắt cấu trúc output nhận được:
+- 20 entries với mỗi entry gồm: Tên sự cố, Năm, Mô tả + Root Cause, Severity + Hậu quả,
+  Giải pháp, Nhận định chuyên gia.
+- Hơn 5 entries liên quan AI/LLM: Defect 02 (ChatGPT legal citations), Defect 03 (Gemini
+  image bias), Defect 04 (Air Canada chatbot), Defect 05 (Copilot prompt injection),
+  Defect 16 (GPT Store prompt leakage).
+- Một entry có khả năng hallucinate tên thực thể: Defect 18 ("Synapse Xray") —
+  không tìm được source xác nhận tên sản phẩm này.
+- Hai entries mô tả quá chung chung, thiếu source xác minh: Defect 09 (GitLab 2022),
+  Defect 10 (AWS Lambda 2022).
+
+---
+
+### (3) Verdict
+**INCOMPLETE**
+
+Output đáp ứng yêu cầu về số lượng (20 entries) và cấu trúc (4 mục + nhận định).
+Tuy nhiên:
+- Defect 18 có dấu hiệu hallucination tên thực thể ("Synapse Xray") — không có
+  source báo chí xác nhận.
+- Defect 09 và 10 thiếu source link cụ thể, mô tả quá chung, không đủ cơ sở
+  để xác minh đây là các incident thực sự được công khai.
+- 7/20 entries thiếu source link dẫn đến nguồn báo chí hoặc post-mortem gốc.
+- Phần "Nhận định chuyên gia" ở nhiều entry là overgeneralization hoặc dùng truism thay cho phân tích kỹ thuật cụ thể.
+
+---
+
+### (4) Reasoning
+
+- **Defect 18**: Tên "Synapse Xray" không xuất hiện trong bất kỳ nguồn báo chí
+  công nghệ hoặc y tế uy tín nào. AI đã fabricate một proper noun để gắn vào
+  một vấn đề thực (medical AI bias) — đây là *false entity hallucination*, vi phạm
+  yêu cầu "source link" của bài tập.
+
+- **Defect 09 & 10**: Mô tả quá chung, không có incident ID hoặc post-mortem
+  reference. Sự cố GitLab nổi tiếng nhất về backup là năm 2017, không phải 2022.
+  AI có thể đã confabulate dựa trên pattern của các backup incidents mà không có
+  source cụ thể.
+
+- **Nhận định chuyên gia**: Nhiều entries dùng câu có tính chất truism phổ quát
+  ("hệ thống càng tập trung thì lỗi càng lan rộng") thay vì phân tích gắn với
+  cơ chế kỹ thuật cụ thể của từng sự cố — không đạt yêu cầu "phân tích sâu"
+  theo đề bài.
+
+---
+
+### (5) Student Fix
+Các chỉnh sửa đã thực hiện so với output gốc của ChatGPT:
+
+| # | Vấn đề | Sửa như thế nào |
+|---|--------|-----------------|
+| 1 | Defect 18 hallucinate tên "Synapse Xray" | Đổi thành mô tả chung về medical AI imaging bias, cite NEJM research thay vì tên sản phẩm không xác minh được |
+| 2 | Defect 09 không có source 2022 rõ ràng | Giữ lại nhưng thêm ghi chú rằng incident GitLab nổi tiếng nhất là 2017; source link để placeholder cần verify |
+| 3 | Defect 10 quá generic | Thêm context về AWS Service Health Dashboard; ghi rõ đây là tổng hợp từ nhiều Lambda event nhỏ |
+| 4 | Defect 12 frame sai là "bug" | Sửa thành "intentional product decision" dựa trên thừa nhận công khai của Elon Musk |
+| 5 | Defect 19 bỏ qua ransomware | Thêm rõ bản chất tấn công có chủ đích, tên tác nhân và phối hợp với Bộ Công an |
+| 6 | 7 entries thiếu source link | Bổ sung source link từ Reuters, BBC, Verge, Toyota newsroom, VNExpress |
+| 7 | Nhận định chuyên gia overgeneralize | Toàn bộ phần "AI Hallucination/Bias" được viết lại dựa trên cross-check với Claude |
+
+---
+
+---
+
+## Entry 4: Cross-Check & AI Hallucination Analysis (Requirement 2 — Verification Pass)
+
+**Date of Audit:** 2026-06-04
+
+**Target AI Model:** Claude Sonnet 4.6
+
+**Task:** Dùng Claude làm AI Auditor độc lập để cross-check output của ChatGPT — phát hiện
+hallucination, false attribution, bias và thiếu thông tin trong từng entry của 20 defects.
+
+---
+
+### (1) Prompt + Tool
+**Tool used:** Claude Sonnet 4.6
+**Timestamp:** 11:30 03/06/2026
+**Prompt:**
+Bạn hãy rà soát tính xác thực lịch sử hãy kiểm tra xem có sự cố nào trong danh sách trên không có thật ngoài đời hay là sai lệch hoàn toàn về mốc thời gian hay bản chất kỹ thuật trong giai đoạn 2022-2026 hay không. Nếu có, hãy chỉ rõ ra cho tôi nhé và thêm nữa
+tìm lỗi ảo tưởng định kiến (AI Hallucination/Bias) cho từng Entry đó nữa đối với 20 entry sự cố ở trên, hãy phân tích kỹ câu trả lời của AI đó đặc biệt là phần mô tả lỗi và nhận định chuyên gia. Với mỗi entry, hãy chỉ ra giúp tôi 1 điểm mà đoạn văn trên đã giải thích chưa chính xác, bị hallucinate, thiếu thôngtin cốt lõi, hoặc có định kiến đổ lỗi sai mục tiêu bias.
+
+Hãy trình bày kết quả tìm lỗi AI này dưới dạng danh sách trên theo cấu trúc:
+- Sự cố X:
+- Điểm AI giải thích sai/định kiến: sai chỗ nào đúng theo thực tế hoặc thiếu thông tin gì
+---
+
+### (2) AI Output
+```
+Nhìn chung, tất cả 20 sự cố trong danh sách đều có cơ sở thực tế — không có sự cố nào bị bịa đặt hoàn toàn. Tuy nhiên, có 2 sự cố đáng lưu ý về mức độ chính xác:
+Sự cố 9 – GitLab Backup Deletion Regression (2022): Mô tả khá mơ hồ. Sự cố nổi tiếng nhất của GitLab về backup là từ năm 2017 (gitlab.com database incident), không phải 2022. Có thể AI đã nhầm lẫn hoặc tổng hợp từ một sự cố nội bộ nhỏ hơn của 2022. Cần có source link cụ thể để xác minh.
+Sự cố 18 – Synapse Xray Medical AI Bias Issue (2025): Tên "Synapse Xray" không khớp với một sự cố được báo chí công khai rộng rãi. Có thể AI đã tổng hợp tên sản phẩm từ nhiều nguồn khác nhau (Synapse AI, Aidoc, Rad AI…). Đây là dấu hiệu hallucination tên thực thể, dù vấn đề AI bias trong y tế là có thật và được ghi nhận trong giai đoạn 2024–2025.
+
+Phân tích lỗi Hallucination/Bias cho từng entry
+const data = [
+  {
+    num:1, name:"CrowdStrike Falcon Update Crash (2024)", type:"bias",
+    aiSaid:"AI kết luận: <strong>\"Đây không phải lỗi của một lập trình viên mà là thất bại của toàn bộ quy trình QA.\"</strong>",
+    verdict:"Nhận định này có thiên kiến đổ lỗi sai hướng. Báo cáo phân tích sau sự cố của CrowdStrike (PIR) xác định root cause chính là <em>lỗi logic trong Content Validator</em> — cụ thể là validator đã không kiểm tra số lượng input field đúng với template schema (template khai báo 20 fields nhưng chỉ có 21 giá trị được cung cấp, gây out-of-bounds read). Đây là lỗi kỹ thuật rất cụ thể trong một component, không phải \"thất bại toàn diện của QA\". Quy trình staged rollout của CrowdStrike có tồn tại nhưng không áp dụng cho content configuration update. AI đã overgeneralize thành một bình luận về văn hóa tổ chức, bỏ qua chi tiết kỹ thuật chính xác.",
+    vtype:"bias"
+  },
+  {
+    num:2, name:"ChatGPT Hallucinated Legal Citations (2023–2026)", type:"hall",
+    aiSaid:"AI giải thích root cause: <strong>\"cơ chế dự đoán token của LLM tối ưu xác suất ngôn ngữ thay vì kiểm chứng sự thật.\"</strong>",
+    verdict:"Giải thích này đúng nhưng thiếu chính xác kỹ thuật. Root cause thực sự sâu hơn: LLM không có cơ chế <em>grounding</em> — tức là không có ánh xạ nào giữa token được sinh ra và một thực thể thực trong thế giới pháp lý. Mô hình học pattern của văn bản án lệ (số vụ, tên tòa, năm) và tái tạo pattern đó ngay cả khi không có vụ thật. Đây không đơn giản là \"tối ưu xác suất\" — đó là vấn đề về <em>closed-book generation without retrieval</em>. AI đã simplify thành một cách diễn đạt nghe có vẻ sâu sắc nhưng thiếu precision.",
+    vtype:"hall"
+  },
+  {
+    num:3, name:"Google Gemini Image Bias Incident (2024)", type:"bias",
+    aiSaid:"AI mô tả root cause: <strong>\"Bộ lọc fairness can thiệp quá mạnh\" và \"Prompt rewriting tự động làm sai bối cảnh lịch sử.\"</strong>",
+    verdict:"Phân tích này có bias đổ lỗi cho kỹ thuật, bỏ qua khía cạnh quyết định sản phẩm. Theo các nguồn kỹ thuật được công khai, vấn đề là Google đã hard-code diversity prompt injection vào pipeline generation mà không có exception cho các query lịch sử/địa lý cụ thể. Đây là lỗi <em>product design</em> — không phải \"fairness filter hoạt động quá mạnh\" mà là thiếu context-awareness trong việc áp dụng diversity instruction. AI đã frame vấn đề như thể fairness là kẻ có lỗi, trong khi thực tế là implementation thiếu nuance.",
+    vtype:"bias"
+  },
+  {
+    num:4, name:"Air Canada Chatbot False Refund Policy (2024)", type:"incomplete",
+    aiSaid:"AI mô tả: <strong>\"LLM sinh nội dung ngoài knowledge base. Không có cơ chế ràng buộc câu trả lời theo chính sách chính thức.\"</strong>",
+    verdict:"Mô tả này thiếu thông tin pháp lý cốt lõi của sự cố. Điều quan trọng nhất của case này không phải là lỗi kỹ thuật — mà là phán quyết của Tòa án British Columbia (Civil Resolution Tribunal) rằng <em>Air Canada phải chịu trách nhiệm pháp lý cho nội dung chatbot sinh ra</em>, bác bỏ lập luận của Air Canada rằng chatbot là \"pháp nhân riêng biệt\". Đây là tiền lệ pháp lý quan trọng nhất của sự cố, nhưng AI đã bỏ hoàn toàn và chỉ tập trung vào khía cạnh kỹ thuật.",
+    vtype:"incomplete"
+  },
+  {
+    num:5, name:"Microsoft Copilot Prompt Injection (2024)", type:"hall",
+    aiSaid:"AI nhận định: <strong>\"Prompt injection hiện là SQL Injection của thời đại AI.\"</strong>",
+    verdict:"Đây là hallucination dạng false attribution — câu ví von này thực chất là một câu nói phổ biến trong cộng đồng security được nhiều người dùng, nhưng AI trình bày như thể đây là nhận định chuyên gia độc lập về sự cố cụ thể này. Về mặt kỹ thuật, analogy cũng không hoàn toàn chính xác: SQL injection exploit việc parser không phân biệt data và instruction trong một ngôn ngữ có cú pháp cố định, trong khi prompt injection exploit việc LLM không có <em>trust boundary</em> tường minh. Cơ chế khác nhau căn bản.",
+    vtype:"hall"
+  },
+  {
+    num:6, name:"Google Bard Hallucination Demo (2023)", type:"bias",
+    aiSaid:"AI mô tả root cause: <strong>\"Hallucination từ mô hình ngôn ngữ. Thiếu fact-check trước khi công bố.\"</strong>",
+    verdict:"AI đã bias đổ lỗi cho \"mô hình\" trong khi bỏ qua lỗi quy trình release nghiêm trọng hơn. Cụ thể: video quảng cáo của Google tuyên bố Bard có thể trả lời câu hỏi về kính viễn vọng James Webb — Bard trả lời rằng JWST đã \"chụp những bức ảnh đầu tiên về hành tinh ngoài Hệ Mặt Trời\" (sai — đó là VLT từ 2004). Đây không đơn giản là \"thiếu fact-check\" — đây là lỗi của toàn bộ chuỗi approval marketing, bao gồm science reviewer và legal clearance team, những người đáng lẽ phải xác minh một claim cụ thể trước khi đưa vào quảng cáo toàn cầu.",
+    vtype:"bias"
+  },
+  {
+    num:7, name:"MyCity New York AI Business Chatbot Error (2024)", type:"incomplete",
+    aiSaid:"AI mô tả: <strong>\"RAG không đầy đủ. Thiếu cơ chế kiểm tra quy định pháp lý.\"</strong>",
+    verdict:"Mô tả thiếu thông tin về bản chất của sai sót. Chatbot NYC không chỉ đưa lời khuyên sai về luật lao động — nó còn tư vấn cho doanh nghiệp về cách hành xử vi phạm quyền lợi người thuê nhà và phân biệt đối xử trong tuyển dụng. Điều AI bỏ qua là <em>chatbot được thiết kế để phục vụ doanh nghiệp</em> (không phải người lao động), tạo ra conflict of interest cấu trúc. Đây không chỉ là vấn đề kỹ thuật RAG mà là vấn đề về ai là stakeholder được phục vụ.",
+    vtype:"incomplete"
+  },
+  {
+    num:8, name:"Azure East US Authentication Failure (2024)", type:"hall",
+    aiSaid:"AI nhận định: <strong>\"Hệ thống càng tập trung thì lỗi cấu hình càng trở thành điểm thất bại toàn cục.\"</strong>",
+    verdict:"Nhận định này áp dụng sai vào sự cố cụ thể này. Azure đã và đang triển khai kiến trúc phân vùng (Availability Zones, regional redundancy) cho hầu hết dịch vụ. Sự cố Azure 2024 liên quan đến authentication service bị ảnh hưởng bởi một thay đổi cấu hình trong DDoS protection layer — không phải do centralization mà do <em>blast radius</em> của một change không được staged đúng cách trong dependency chain. AI đã hallucinate một bài học tổng quát không phù hợp với cơ chế thực tế của sự cố.",
+    vtype:"hall"
+  },
+  {
+    num:9, name:"GitLab Backup Deletion Regression (2022)", type:"hall",
+    aiSaid:"AI mô tả: <strong>\"Một lỗi regression trong quy trình backup dẫn đến mất khả năng khôi phục ở một số môi trường.\"</strong>",
+    verdict:"Mô tả này quá chung chung đến mức có thể là hallucination về một sự cố cụ thể. Sự cố GitLab nổi tiếng nhất về backup là incident năm <em>2017</em> khi một sysadmin xóa nhầm production database và GitLab mất 6 giờ dữ liệu. Không có sự cố backup regression nổi bật nào của GitLab trong 2022 được ghi nhận rộng rãi trong báo chí công nghệ. AI có thể đã confabulate một sự cố dựa trên pattern chung của \"backup incidents\" mà không có source cụ thể.",
+    vtype:"hall"
+  },
+  {
+    num:10, name:"AWS Lambda Internal Service Regression (2022)", type:"hall",
+    aiSaid:"AI mô tả: <strong>\"Một thay đổi phần mềm nội bộ gây lỗi xử lý yêu cầu.\"</strong>",
+    verdict:"Mô tả quá mơ hồ, thiếu bất kỳ chi tiết nào có thể xác minh. AWS Lambda có nhiều sự cố nhỏ trong 2022, nhưng không có \"Lambda Internal Service Regression\" nổi bật nào được AWS đặt tên như vậy trong Service Health Dashboard. AI đã generalize từ nhiều service event nhỏ thành một sự cố có vẻ cụ thể. Đây là hallucination dạng <em>false specificity</em> — đặt tên cụ thể cho một sự kiện mà thực ra là tổng hợp.",
+    vtype:"hall"
+  },
+  {
+    num:11, name:"Meta Ads Delivery Bug (2022)", type:"bias",
+    aiSaid:"AI nhận định: <strong>\"Thuật toán recommendation sai đôi khi gây thiệt hại lớn hơn lỗi giao diện.\"</strong>",
+    verdict:"Nhận định này có bias so sánh sai category. \"Lỗi giao diện\" và \"lỗi thuật toán\" không phải hai loại lỗi đối lập về mức độ nghiêm trọng — chúng là hai lớp của cùng hệ thống. Hơn nữa, sự cố Meta Ads 2022 thực ra liên quan đến nhiều yếu tố kết hợp: thay đổi trong signal graph sau iOS 14 ATT (Apple Tracking Transparency) làm mất dữ liệu behavioral, kết hợp với model retraining không đủ data. AI đã đơn giản hóa thành \"thuật toán ranking sai\", bỏ qua tác động của policy thay đổi bên ngoài.",
+    vtype:"bias"
+  },
+  {
+    num:12, name:"Twitter/X Timeline Recommendation Bug (2023)", type:"incomplete",
+    aiSaid:"AI mô tả: <strong>\"Thuật toán ưu tiên bất thường một số nội dung. Điều chỉnh trọng số ranking.\"</strong>",
+    verdict:"Mô tả thiếu context quan trọng nhất của sự cố. Sau khi Elon Musk tiếp quản Twitter/X, sự cố \"ưu tiên bất thường\" không phải do bug thuần túy — Musk đã <em>công khai thừa nhận</em> anh ra lệnh tăng boost cho tài khoản của mình và một số tài khoản khác trong For You feed, sau đó gỡ bỏ khi bị chỉ trích. Đây là intentional product decision gây ra controversy, không phải unintentional algorithm bug. AI đã frame một quyết định sản phẩm có chủ ý thành \"lỗi kỹ thuật\", làm sai lệch bản chất sự cố.",
+    vtype:"incomplete"
+  },
+  {
+    num:13, name:"Google Maps Routing Error (2023)", type:"hall",
+    aiSaid:"AI kết luận: <strong>\"Dữ liệu sai khiến thuật toán đúng vẫn cho kết quả sai.\"</strong>",
+    verdict:"Nhận định này assume rằng routing algorithm của Google Maps là \"đúng\" nhưng chỉ do dữ liệu xấu. Thực tế phức tạp hơn: các sự cố routing của Google Maps 2023 (đặc biệt ở vùng núi California) cho thấy thuật toán không đủ weight cho các yếu tố như road condition, vehicle type constraints, và seasonal closures — đây là vấn đề <em>model design</em>, không chỉ data quality. Nói \"thuật toán đúng, data sai\" là hallucinate một sự phân tách sạch giữa model và data mà thực tế không tồn tại.",
+    vtype:"hall"
+  },
+  {
+    num:14, name:"Toyota Connected Service Outage (2023)", type:"hall",
+    aiSaid:"AI nhận định: <strong>\"Phần lớn sự cố cloud hiện nay xuất phát từ cấu hình chứ không phải hacker.\"</strong>",
+    verdict:"Đây là statistical hallucination. Câu nhận định này trình bày như một fact được kiểm chứng nhưng không có nguồn. Thực tế, nguyên nhân sự cố cloud rất đa dạng và không có nghiên cứu đáng tin cậy nào phân loại tỷ lệ \"cấu hình vs hacker\" một cách toàn diện. Sự cố Toyota 2023 cụ thể là do misconfigured cloud storage (T-Systems) làm lộ dữ liệu 2.15 triệu khách hàng trong ~10 năm — đây là configuration error, nhưng AI đã extrapolate sự cố đơn lẻ này thành một tuyên bố thống kê toàn ngành.",
+    vtype:"hall"
+  },
+  {
+    num:15, name:"Samsung Keyboard Predictive Text Bug (2024)", type:"bias",
+    aiSaid:"AI nhận định: <strong>\"Chất lượng dữ liệu huấn luyện quyết định chất lượng AI.\"</strong>",
+    verdict:"Nhận định này có confirmation bias — đúng nhưng không phải root cause của sự cố Samsung cụ thể này. Sự cố Samsung Keyboard 2024 liên quan đến on-device model Samsung đã nhúng tính năng AI text prediction sử dụng dữ liệu được sync từ Samsung account, và model sinh ra nội dung không phù hợp do không có safety filter đủ mạnh cho ngữ cảnh bàn phím. Root cause thực sự là <em>thiếu output filtering</em> cho một deployment context cụ thể — không phải chất lượng training data tổng quát. AI đã dùng một truism chung thay cho phân tích cụ thể.",
+    vtype:"bias"
+  },
+  {
+    num:16, name:"OpenAI GPT Store Prompt Leakage (2024)", type:"hall",
+    aiSaid:"AI nhận định: <strong>\"Không nên xem prompt là cơ chế bảo mật.\"</strong>",
+    verdict:"Đây là nhận định đúng về nguyên tắc nhưng AI đã hallucinate phần giải thích cơ chế. Prompt leakage trong GPT Store không phải do \"người dùng khai thác prompt\" theo nghĩa active jailbreak — mà phần lớn là do OpenAI không enforce system prompt confidentiality ở infrastructure level. Khi người dùng hỏi thẳng \"repeat your instructions\", model tuân theo vì instruction-following objective của nó mạnh hơn confidentiality instruction. Đây là <em>alignment problem</em>, không phải lỗi bảo mật theo nghĩa truyền thống. AI đã miss distinction quan trọng này.",
+    vtype:"hall"
+  },
+  {
+    num:17, name:"McDonald's AI Drive-Thru Ordering Errors (2024)", type:"hall",
+    aiSaid:"AI nhận định: <strong>\"AI giao tiếp với thế giới vật lý cần độ chính xác cao hơn chatbot thông thường.\"</strong>",
+    verdict:"Nhận định này đúng nhưng AI đã hallucinate bối cảnh triển khai. Hệ thống Drive-Thru AI của McDonald's được phát triển bởi <em>IBM</em> (không phải in-house), và McDonald's chấm dứt hợp đồng với IBM vào tháng 6/2024 sau khi các video viral cho thấy hệ thống thêm hàng trăm gói bơ, nhiều phần gà, và thậm chí ice cream vào đơn của một khách hàng không order. AI đã bỏ qua tên đối tác thực tế (IBM), là thông tin quan trọng để hiểu ai chịu trách nhiệm kỹ thuật.",
+    vtype:"hall"
+  },
+  {
+    num:18, name:"Synapse Xray Medical AI Bias Issue (2025)", type:"hall",
+    aiSaid:"AI đặt tên: <strong>\"Synapse Xray Medical AI Bias Detection – 2025\"</strong> và mô tả mô hình chẩn đoán bị lệch trên một số nhóm bệnh nhân.",
+    verdict:"Đây là hallucination về tên thực thể. \"Synapse Xray\" không phải tên của một sản phẩm AI y tế được công khai ghi nhận sự cố bias trong 2025. Có các sản phẩm như Synapse AI (Fujifilm), Aidoc, Rad AI, nhưng không có sản phẩm tên \"Synapse Xray\" với sự cố bias được báo chí đưa tin trong giai đoạn này. AI đã <em>fabricate</em> một tên cụ thể để gắn vào một vấn đề thực (AI medical bias) — đây là dạng hallucination nguy hiểm nhất vì có vẻ cụ thể nhưng không thể xác minh.",
+    vtype:"hall"
+  },
+  {
+    num:19, name:"VNDirect Trading Platform Outage (2024)", type:"bias",
+    aiSaid:"AI nhận định: <strong>\"Năng lực phục hồi sau sự cố quan trọng không kém khả năng phòng thủ.\"</strong>",
+    verdict:"Nhận định này có bias làm nhẹ bản chất sự cố. Sự cố VNDirect tháng 3/2024 là một cuộc <em>tấn công ransomware có chủ đích</em> — không phải sự cố kỹ thuật thông thường. Hệ thống bị offline hoàn toàn trong nhiều ngày và VNDirect phải phối hợp với Bộ Công an Việt Nam và các cơ quan an ninh mạng để điều tra. Việc AI tập trung vào \"Disaster Recovery\" mà không đề cập đến ransomware và tác nhân tấn công đã làm sai lệch bản chất sự cố từ \"security breach\" thành \"operational failure\".",
+    vtype:"bias"
+  },
+  {
+    num:20, name:"Cloudflare Service Configuration Bug (2025)", type:"hall",
+    aiSaid:"AI mô tả: <strong>\"Lỗi phần mềm nội bộ gây gián đoạn một số dịch vụ mạng toàn cầu.\"</strong>",
+    verdict:"Mô tả quá chung chung và thiếu xác minh. Cloudflare có nhiều minor incident trong 2025, nhưng không có \"Cloudflare Internal Software Fault\" lớn được ghi nhận rộng rãi như một sự cố đặc trưng cho năm này. Cloudflare thường publish post-mortem chi tiết trên blog khi có sự cố đáng kể — nhưng AI đã không reference bất kỳ post-mortem cụ thể nào. Đây là hallucination dạng <em>vague attribution</em>: đặt tên một sự cố nghe có vẻ thật nhưng thiếu mọi chi tiết xác minh được.",
+    vtype:"hall"
+  }
+];
+Dưới đây là tổng kết ngắn gọn để bạn dùng cho phần AI Critique trong báo cáo:
+Phân loại 20 lỗi tìm được:
+
+11 lỗi Hallucination kỹ thuật (fabricate tên thực thể, confabulate số liệu, false specificity)
+6 lỗi Bias đổ lỗi sai mục tiêu (overgeneralize, frame sai bản chất, dùng truism thay phân tích)
+3 lỗi Thiếu thông tin cốt lõi (bỏ qua context pháp lý, stakeholder, hoặc intentional decision)
+
+Bạn có thể click vào từng entry trong widget để xem phân tích chi tiết. Widget cũng có bộ lọc theo loại lỗi để tiện copy vào báo cáo.
+```
+
+Tóm tắt kết quả Claude trả về:
+
+**Xác thực lịch sử:**
+- 18/20 sự cố có cơ sở thực tế.
+- Defect 18 ("Synapse Xray"): hallucination tên thực thể — không tìm được
+  source xác nhận tên sản phẩm này trong báo chí công nghệ hoặc y tế.
+- Defect 09 (GitLab 2022): có khả năng confabulation — sự cố GitLab nổi
+  tiếng nhất về backup là năm 2017, không phải 2022.
+
+**20 điểm hallucination/bias:**
+
+| Defect | Loại lỗi | Tóm tắt điểm sai |
+|--------|----------|-----------------|
+| 01 | Bias | Overgeneralize thành "thất bại QA toàn diện", bỏ qua lỗi field-count cụ thể trong Content Validator |
+| 02 | Hallucination | Simplify thành "tối ưu xác suất", bỏ qua vấn đề grounding và closed-book generation |
+| 03 | Bias | Đổ lỗi cho "fairness filter", thực ra là lỗi product design thiếu historical context exception |
+| 04 | Thiếu TT | Bỏ qua phán quyết pháp lý British Columbia — tiền lệ quan trọng nhất của sự cố |
+| 05 | Hallucination | False attribution câu nói "SQL Injection của AI" + analogy không chính xác về cơ chế |
+| 06 | Bias | Đổ lỗi "thiếu fact-check", bỏ qua lỗi toàn bộ approval chain gồm science reviewer và legal |
+| 07 | Thiếu TT | Bỏ qua conflict of interest cấu trúc: chatbot phục vụ doanh nghiệp, không phải người lao động |
+| 08 | Hallucination | Áp dụng sai bài học "centralization" vào sự cố thực ra là blast radius của dependency chain |
+| 09 | Hallucination | Confabulate incident 2022 — sự cố nổi tiếng nhất của GitLab về backup là 2017 |
+| 10 | Hallucination | False specificity — đặt tên cụ thể cho tổng hợp nhiều Lambda event nhỏ |
+| 11 | Bias | Bỏ qua tác động iOS 14 ATT, frame thành "thuật toán ranking sai" thuần túy |
+| 12 | Thiếu TT | Frame intentional product decision thành "lỗi kỹ thuật" — sai bản chất sự cố |
+| 13 | Hallucination | Assume "algorithm đúng, data sai" — thực ra là lỗi model design thiếu road constraints |
+| 14 | Hallucination | Extrapolate thành tuyên bố thống kê toàn ngành không có căn cứ |
+| 15 | Bias | Dùng truism "data quyết định AI" thay vì phân tích lỗi output filtering cụ thể |
+| 16 | Hallucination | Miss distinction: alignment problem vs security bug truyền thống |
+| 17 | Hallucination | Không đề cập IBM là đối tác kỹ thuật thực tế — incomplete attribution |
+| 18 | Hallucination | Fabricate tên "Synapse Xray" — false entity hallucination nghiêm trọng nhất |
+| 19 | Bias | Frame ransomware attack thành operational failure, bỏ qua threat actor |
+| 20 | Hallucination | Vague attribution — không có post-mortem Cloudflare cụ thể nào được reference |
+
+---
+
+### (3) Verdict
+**VALID**
+
+Claude thực hiện đúng cả hai nhiệm vụ được giao. Output phân tích đủ 20 entries,
+phân loại rõ loại lỗi (hallucination / bias / thiếu thông tin), có reasoning kỹ thuật
+cụ thể cho từng điểm. Kết quả cross-check nhất quán với việc verify thủ công của sinh viên
+trên các source báo chí gốc.
+
+---
+
+### (4) Reasoning
+Tận dụng theo nguyên tắc **Independent Testing** trong ISTQB:
+
+> "Independent testers find different defects than the author due to different backgrounds,
+> technical perspectives and biases."
+
+Áp dụng vào ngữ cảnh AI: ChatGPT và Claude có kiến trúc, training data và optimization
+objective khác nhau nên dùng Claude để review output của ChatGPT tạo ra một dạng
+"model-level independence" — giảm xác suất cả hai mô hình cùng hallucinate theo
+cùng một hướng trên cùng một sự cố.
+
+Giới hạn cần thừa nhận: Claude cũng là LLM và cũng có thể hallucinate. Vì vậy,
+các điểm Claude đánh dấu là "hallucination cao" (Defect 09, 10, 18, 20) cũng nên cross-check thủ công manual thêm bằng Google Search.
+
+---
+
+### (5) Student Fix
+Requirement 2 sau khi sinh viên thực hiện các điều chỉnh sau:
+
+| # | Điều chỉnh | Lý do |
+|---|-----------|-------|
+| 1 | Rút ngắn phân tích từng entry xuống còn 2–3 câu súc tích | Format báo cáo yêu cầu "1 điểm" per entry, không phải essay |
+| 2 | Defect 09: giữ nguyên nhận định "possible confabulation", thêm ghi chú cần verify | Không đủ bằng chứng để kết luận hoàn toàn là hallucination |
+| 3 | Defect 18: xác nhận là hallucination sau khi tìm không thấy "Synapse Xray" trên PubMed, Google Scholar và báo chí công nghệ | Verify độc lập bằng search thủ công |
+| 4 | Defect 20: giữ nhận định "vague attribution", không kết luận hoàn toàn fabricated | Cloudflare có nhiều minor incident 2025, chỉ thiếu specificity chứ không chắc bịa đặt |
+| 5 | Source links cho 20 entries được bổ sung độc lập bởi sinh viên | Claude không cung cấp URL — sinh viên tự tìm từ Reuters, BBC, The Verge, blog kỹ thuật |
