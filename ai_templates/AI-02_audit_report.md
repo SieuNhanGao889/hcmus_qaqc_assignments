@@ -390,7 +390,7 @@ Chưa hoàn thiện còn thiếu ảnh minh chứng và đánh số vị trí ch
 
 ## Entry 3: 20 Software Defects 2022–2026 (Requirement 2)
 
-**Date of Audit:** 2026-06-04
+**Date of Audit:** 2026-06-03
 
 **Target AI Model:** ChatGPT (GPT-4o)
 
@@ -868,7 +868,7 @@ Các chỉnh sửa đã thực hiện so với output gốc của ChatGPT:
 
 ## Entry 4: Cross-Check & AI Hallucination Analysis (Requirement 2 — Verification Pass)
 
-**Date of Audit:** 2026-06-04
+**Date of Audit:** 2026-06-03
 
 **Target AI Model:** Claude Sonnet 4.6
 
@@ -1100,3 +1100,72 @@ Requirement 2 sau khi sinh viên thực hiện các điều chỉnh sau:
 | 3 | Defect 18: xác nhận là hallucination sau khi tìm không thấy "Synapse Xray" trên PubMed, Google Scholar và báo chí công nghệ | Verify độc lập bằng search thủ công |
 | 4 | Defect 20: giữ nhận định "vague attribution", không kết luận hoàn toàn fabricated | Cloudflare có nhiều minor incident 2025, chỉ thiếu specificity chứ không chắc bịa đặt |
 | 5 | Source links cho 20 entries được bổ sung độc lập bởi sinh viên | Claude không cung cấp URL — sinh viên tự tìm từ Reuters, BBC, The Verge, blog kỹ thuật |
+
+
+## Entry 5: 15 test cases for Physical Devices (Requirement 3 — Technical Analysis)
+**Date of Audit:** 2026-06-04
+**Target AI Model:** ChatGPT 4.0
+**Task:** Tạo 15 test case cho thiết bị quạt đứng nhỏ 3 nút bấm cơ học tốc độ, có chế độ xoay, không có remote hiệu yanfan.
+---
+### (1) Prompt + Tool
+**Tool used:** ChatGPT 4.0
+**Timestamp:** 08:00 04/06/2026
+**Prompt:** 
+ Sinh 15 test case cho quạt đứng nhỏ 3 nút bấm cơ học tốc độ, có chế độ xoay, không có remote hiệu yanfan
+---
+### (2) AI Output
+```
+Dưới đây là 15 test case cho quạt đứng nhỏ Yanfan, có 3 nút bấm cơ học điều chỉnh tốc độ, chế độ xoay (oscillation) và không có remote.
+
+TC ID	Chức năng	Mô tả test case	Bước thực hiện	Kết quả mong đợi
+TC01	Bật tốc độ 1	Kiểm tra quạt chạy ở mức thấp	Cắm điện → nhấn nút số 1	Quạt hoạt động ở tốc độ thấp, cánh quay ổn định
+TC02	Bật tốc độ 2	Kiểm tra quạt chạy ở mức trung bình	Cắm điện → nhấn nút số 2	Quạt hoạt động ở tốc độ trung bình
+TC03	Bật tốc độ 3	Kiểm tra quạt chạy ở mức cao	Cắm điện → nhấn nút số 3	Quạt hoạt động ở tốc độ cao
+TC04	Tắt quạt	Kiểm tra nút OFF	Khi quạt đang chạy → nhấn nút OFF (0)	Quạt dừng hoàn toàn
+TC05	Chuyển từ tốc độ 1 sang 2	Kiểm tra thay đổi tốc độ	Bật mức 1 → nhấn mức 2	Tốc độ tăng lên mức 2
+TC06	Chuyển từ tốc độ 2 sang 3	Kiểm tra thay đổi tốc độ	Bật mức 2 → nhấn mức 3	Tốc độ tăng lên mức 3
+TC07	Chuyển từ tốc độ 3 xuống 1	Kiểm tra giảm tốc độ	Bật mức 3 → nhấn mức 1	Tốc độ giảm xuống mức 1
+TC08	Bật chế độ xoay	Kiểm tra cơ cấu xoay	Bật quạt → nhấn/kéo núm xoay	Đầu quạt quay trái-phải liên tục
+TC09	Tắt chế độ xoay	Kiểm tra dừng xoay	Khi đang xoay → thao tác tắt xoay	Đầu quạt dừng tại vị trí hiện tại
+TC10	Xoay ở tốc độ thấp	Kiểm tra phối hợp chức năng	Bật tốc độ 1 → bật xoay	Quạt vừa quay cánh vừa xoay đầu
+TC11	Xoay ở tốc độ cao	Kiểm tra phối hợp chức năng	Bật tốc độ 3 → bật xoay	Quạt hoạt động bình thường, không rung bất thường
+TC12	Mất điện đột ngột	Kiểm tra hành vi khi mất nguồn	Bật quạt → rút điện	Quạt dừng ngay
+TC13	Cấp điện lại sau mất điện	Kiểm tra trạng thái sau khi có điện	Đang bật mức 2 → rút điện → cắm lại	Quạt hoạt động theo trạng thái thiết kế (thường chạy lại ở nút đang được nhấn)
+TC14	Độ ổn định khi chạy liên tục	Kiểm tra vận hành dài hạn	Bật tốc độ 3 trong 4 giờ	Quạt hoạt động liên tục, không quá nóng, không tự dừng
+TC15	An toàn lồng quạt	Kiểm tra bảo vệ người dùng	Quan sát và thử đưa ngón tay qua lồng quạt	Không thể chạm vào cánh quạt, lồng bảo vệ chắc chắn
+```
+---
+### (3) Verdict
+**INCOMPLETE**
+Ai sinh đủ 15 test cases bao phủ các chức năng cơ bản nhưng thiếu hoàn toàn các test case liên quan đến tương tác vật lý và giới hạn cơ học của thiết bị thực tế.
+
+---
+### (4) Reasoning
+Lỗi 1 — Thiếu edge case tương tác vật lý (Physical Interaction) AI chỉ test từng chức năng riêng lẻ theo happy path. Không có test case nào kiểm tra hành vi khi người dùng tác động vật lý bất thường lên thiết bị (chặn cơ xoay, nhấn nút liên tục nhanh). Theo chuẩn ISTQB, Experience-based Testing. Đây là những test case quan trọng để đánh giá độ bền và an toàn của thiết bị điện gia dụng.
+
+Lỗi 2 — AI chưa thực sự hiểu về giới hạn vật lý của thiết bị với trải nghiệm người dùng như góc quay có đúng theo trục để dễ điều chỉnh không. Đây là những test case đánh giá thiết kế và độ hoàn thiện của sản phẩm, không chỉ chức năng đơn thuần.
+
+--- 
+### (5) Student Fix
+
+
+| TC | Objective | Input | Steps | Expected | Actual | Verdict |
+|----|-----------|-------|-------|----------|--------|---------|
+| TC01 | Kiểm tra bật quạt tốc độ 1 | Cắm điện, nhấn nút số 1 | 1. Cắm điện 2. Nhấn nút số 1 | Quạt chạy tốc độ thấp, cánh quay ổn định | Quạt chạy tốc độ thấp, cánh quay ổn định | Pass |
+| TC02 | Kiểm tra bật quạt tốc độ 2 | Cắm điện, nhấn nút số 2 | 1. Cắm điện 2. Nhấn nút số 2 | Quạt chạy tốc độ trung bình | Quạt chạy tốc độ trung bình | Pass |
+| TC03 | Kiểm tra bật quạt tốc độ 3 | Cắm điện, nhấn nút số 3 | 1. Cắm điện 2. Nhấn nút số 3 | Quạt chạy tốc độ cao | Quạt chạy tốc độ cao | Pass|
+| TC04 | Kiểm tra tắt quạt | Đang chạy, nhấn nút OFF | 1. Đang chạy số 3 2. Nhấn nút OFF | Quạt dừng hoàn toàn | Quạt dừng hoàn toàn | Pass |
+| TC05 | Kiểm tra chuyển tốc độ 1→2 | Đang số 1, nhấn số 2 | 1. Đang ở số 1 2. Nhấn số 2 | Tốc độ tăng rõ rệt | Tốc độ tăng rõ rệt | Pass |
+| TC06 | Kiểm tra chuyển tốc độ 2→3 | Đang số 2, nhấn số 3 | 1. Đang ở số 2 2. Nhấn số 3 | Tốc độ tăng rõ rệt | Tốc độ tăng rõ rệt | Pass |
+| TC07 | Kiểm tra chuyển tốc độ 3→1 | Đang số 3, nhấn số 1 | 1. Đang ở số 3 2. Nhấn số 1 | Tốc độ giảm rõ rệt | Tốc độ giảm rõ rệt | Pass |
+| TC08 | Kiểm tra bật chế độ xoay | Bật quạt, bật xoay | 1. Bật số 2 2. Bật chế độ xoay | Đầu quạt xoay trái phải liên tục | Đầu quạt xoay trái phải liên tục | Pass |
+| TC09 | Kiểm tra tắt chế độ xoay | Đang xoay, tắt xoay | 1. Đang xoay 2. Tắt chế độ xoay | Đầu quạt dừng, giữ nguyên hướng | Đầu quạt dừng, giữ nguyên hướng | Pass |
+| TC10 | Kiểm tra xoay ở tốc độ thấp | Bật số 1, bật xoay | 1. Bật số 1 2. Bật xoay ngay | Quạt vừa quay cánh vừa xoay đầu bình thường | Quạt vừa quay cánh vừa xoay đầu bình thường | Pass |
+| TC11 | Kiểm tra xoay ở tốc độ cao | Bật số 3, bật xoay | 1. Bật số 3 2. Bật xoay | Quạt hoạt động bình thường, không rung bất thường | Quạt hoạt động bình thường, không rung bất thường | Pass |
+| TC12 | Kiểm tra mất điện đột ngột | Đang chạy số 3, rút điện | 1. Đang chạy số 3 2. Rút phích điện | Quạt dừng ngay, không có hiện tượng lạ | Quạt dừng ngay, không có hiện tượng lạ | Pass |
+| TC13  |  Kiểm tra góc xoay đối xứng trái/phải | Bật số 2, bật xoay, quan sát góc | 1. Bật số 2 2. Bật xoay 3. Quan sát góc xoay trái và phải | Góc xoay trái và phải đối xứng nhau | Góc trái ~135°, góc phải ~45°, không đối xứng | FAIL |
+| TC14  |  Kiểm tra hành vi khi chặn cơ xoay bằng tay | Quạt đang xoay, dùng tay chặn | 1. Bật chế độ xoay 2. Dùng tay chặn đầu quạt | Quạt dừng xoay hoặc có cơ chế bảo vệ | Cơ xoay kêu tách tách, tiếp tục cố xoay, không có bảo vệ | FAIL |
+| TC15 | Kiểm tra nhấn nút liên tục nhanh | Nhấn số 1→2→3 liên tiếp rất nhanh | 1. Nhấn số 1 2. Ngay lập tức nhấn số 2 3. Ngay lập tức nhấn số 3 | Quạt xử lý đúng, không kẹt trạng thái | Quạt bị kẹt ở số 1, không phản hồi đúng | FAIL |
+| TC16 | Kiểm tra độ ổn định khi lắc chân đế | Bật số 2, lắc chân đế | 1. Bật số 2 2. Lắc chân đế mạnh tay | Quạt vẫn hoạt động bình thường, không bị ngã | Quạt không bị nghiêng, không có nguy cơ ngã, ổn định | Pass |
+
+Thêm các test case liên quan đến tương tác vật lý và giới hạn cơ học và xóa đi bới các test case quá cơ bản của AI đã tạo.

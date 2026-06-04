@@ -31,6 +31,7 @@ Bên trên là mẫu bạn hãy điền giúp tôi thông tin của trang page �
 **Purpose:** Phân tích về job posting cụ thể để đánh giá mức độ ứng dụng AI trong công việc QA/QC và tác động của nó đến vai trò của kỹ sư kiểm thử trong hiện tại.
 
 ---
+## Session 2 – 03/06/2026
 
 ### 10:45 03/06/2026 – ChatGPT (GPT-4o)
 **Prompt:**
@@ -62,11 +63,20 @@ cross-check và kiểm định bằng Claude ở bước tiếp theo.
 ### 11:30 03/06/2026 – Claude Sonnet 4.6
 **Prompt:**
 ```
-Bạn hãy rà soát tính xác thực lịch sử hãy kiểm tra xem có sự cố nào trong danh sách trên không có thật ngoài đời hay là sai lệch hoàn toàn về mốc thời gian hay bản chất kỹ thuật trong giai đoạn 2022-2026 hay không. Nếu có, hãy chỉ rõ ra cho tôi nhé và thêm nữa
-tìm lỗi ảo tưởng định kiến (AI Hallucination/Bias) cho từng Entry đó nữa đối với 20 entry sự cố ở trên, hãy phân tích kỹ câu trả lời của AI đó đặc biệt là phần mô tả lỗi và nhận định chuyên gia. Với mỗi entry, hãy chỉ ra giúp tôi 1 điểm mà đoạn văn trên đã giải thích chưa chính xác, bị hallucinate, thiếu thôngtin cốt lõi, hoặc có định kiến đổ lỗi sai mục tiêu bias.
+    Bạn hãy rà soát tính xác thực lịch sử hãy kiểm tra xem có sự cố nào trong danh sách trên không có thật ngoài đời hay là sai lệch hoàn toàn về mốc thời gian hay bản chất kỹ thuật trong giai đoạn 2022-2026 hay không. Nếu có, hãy chỉ rõ ra cho tôi nhé và thêm nữa
+    tìm lỗi ảo tưởng định kiến (AI Hallucination/Bias) cho từng Entry đó nữa đối với 20 entry sự cố ở trên, hãy phân tích kỹ câu trả lời của AI đó đặc biệt là phần mô tả lỗi và nhận định chuyên gia. Với mỗi entry, hãy chỉ ra giúp tôi 1 điểm mà đoạn văn trên đã giải thích chưa chính xác, bị hallucinate, thiếu thôngtin cốt lõi, hoặc có định kiến đổ lỗi sai mục tiêu bias.
 
-Hãy trình bày kết quả tìm lỗi AI này dưới dạng danh sách trên theo cấu trúc:
-- Sự cố X:
-- Điểm AI giải thích sai/định kiến: sai chỗ nào đúng theo thực tế hoặc thiếu thông tin gì
-
+    Hãy trình bày kết quả tìm lỗi AI này dưới dạng danh sách trên theo cấu trúc:
+    - Sự cố X:
+    - Điểm AI giải thích sai/định kiến: sai chỗ nào đúng theo thực tế hoặc thiếu thông tin gì
+```
 **Purpose:** Dùng Claude làm công cụ cross-check độc lập (second opinion) để kiểm định output của ChatGPT — phát hiện hallucination, false attribution, bias và thiếu thông tin trong từng entry.
+
+
+## Session 3 – 04/06/2026
+### 08:00 04/06/2026 – ChatGPT (GPT-4o)
+**Prompt:**
+```
+    Sinh 15 test case cho quạt đứng nhỏ 3 nút bấm cơ học tốc độ, có chế độ xoay, không có remote hiệu yanfan
+```
+**Purpose:** Tạo 15 test case cho thiết bị quạt đứng nhỏ 3 nút bấm cơ học tốc độ, có chế độ xoay, không có remote hiệu yanfan.
