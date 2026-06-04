@@ -11,49 +11,6 @@
 ## Cấu trúc thư mục
 ```
 23127364_HW01_AI_100/
-│   appendix_A_prompt_log.md
-│   README.md
-│   
-├───ai_templates
-│       AI-02_audit_report.md
-│       AI-03_disclosure_form.md
-│       AI-05_privacy_checklist.md
-│       
-├───report
-│       23127364_HW01_report.md
-│       23127364_HW01_report.pdf
-│       issues.png
-│       
-├───req1_jobs
-│       flamingoAI.png
-│       gene_solution.png
-│       kms.png
-│       metacrew.png
-│       mitek.png
-│       nakivo.png
-│       netcompany.png
-│       pizzahut.png
-│       pnj.png
-│       sabitech.png
-│       vietnampost.png
-│       
-├───req3_physical_device
-│   │   device_photo.jpg
-│   │   test_cases.xlsx
-│   │   
-│   └───videos
-│           TC1-3.txt
-│           TC12.txt
-│           TC13.txt
-│           TC14.txt
-│           TC15.txt
-│           TC16.txt
-│           
-└───requirement
-        2026.HW01.Jobs.Defects.PhysicalProduct_En.pdf
-        ___2026.Homework.Policies.pdf
-
-23127364_HW01_AI_100/
 │
 ├── README.md                          ← file này
 ├── appendix_A_prompt_log.md           ← toàn bộ prompt log có timestamp
