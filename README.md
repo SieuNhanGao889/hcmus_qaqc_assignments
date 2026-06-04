@@ -12,7 +12,7 @@
 ```
 23127364_HW01_AI_100/
 │
-├── README.md                          ← file này
+├── README.md                          
 ├── appendix_A_prompt_log.md           ← toàn bộ prompt log có timestamp
 │
 ├── report/
